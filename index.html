@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshita Viradiya - Web Designer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-300">
+    <!-- Navigation -->
+    <header>
+        <nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-3">
+                    <!-- Logo -->
+                    <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">
+                        <span class="font-poppins">HV</span>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Home</a>
+                        <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">About</a>
+                        <a href="#projects" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Projects</a>
+                        <a href="#skills" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Skills</a>
+                        <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Contact</a>
+                    </div>
+                    
+                    <!-- Theme Toggle & Mobile Menu -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Dark Mode Toggle -->
+                        <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                            <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        
+                        <!-- Mobile Menu Button -->
+                        <button id="mobile-menu-button" class="w-10 h-10 flex items-center justify-center md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                            <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <div class="flex flex-col space-y-2">
+                        <a href="#home" class="nav-link block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Home</a>
+                        <a href="#about" class="nav-link block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">About</a>
+                        <a href="#projects" class="nav-link block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Projects</a>
+                        <a href="#skills" class="nav-link block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Skills</a>
+                        <a href="#contact" class="nav-link block py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="md:min-h-screen flex items-center justify-center relative overflow-hidden  pt-24 md:pt-36 lg:pt-36 pb-10 lg:pb-20">
+        <!-- Animated Background -->
+        <div class="hidden md:block absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 opacity-50"></div>
+        <div class="hidden md:block absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        <!-- Creative Floating Elements -->
+        <div class="hidden md:block absolute top-20 left-10 w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-primary-400 to-blue-500 rounded-full animate-float opacity-70 shadow-lg"></div>
+        <div class="hidden md:block absolute bottom-20 right-10 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse-slow opacity-70 shadow-lg"></div>
+        <div class="hidden md:block absolute top-40 right-20 w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-pink-400 to-red-500 rounded-full animate-bounce-slow opacity-70 shadow-lg" style="animation-delay: 1s;"></div>
+        <div class="hidden md:block absolute bottom-40 left-20 w-14 h-14 bg-gradient-to-r from-green-400 to-teal-500 rounded-full animate-pulse-slow opacity-60 shadow-lg" style="animation-delay: 0.5s;"></div>
+        
+        <!-- Geometric Shapes -->
+        <div class="hidden md:block absolute top-32 right-1/3 w-6 h-6 border-2 border-primary-400 rotate-45 animate-rotate opacity-50"></div>
+        <div class="hidden md:block absolute bottom-32 left-1/3 w-10 h-10 border-2 border-purple-400 rounded-full animate-float opacity-50" style="animation-delay: 1.5s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="space-y-4 lg:space-y-6 animate-fade-in">
+               
+                <!-- Hero Text -->
+                <div class="space-y-4 lg:space-y-6">
+                    <div class="relative">
+                        <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-poppins relative z-10">
+                            <span class="text-gray-800 dark:text-white block mb-2">Hi, I'm</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 animate-gradient block relative">
+                                Harshita Viradiya
+                                <div class="absolute -inset-2 bg-gradient-to-r from-primary-400 via-purple-400 to-pink-400 rounded-lg blur-xl opacity-20 animate-pulse-slow"></div>
+                            </span>
+                        </h2>
+                    </div>
+                    
+                    <div class="relative">
+                        <p class="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium">
+                            <span class="inline-block animate-fade-in" style="animation-delay: 0.2s;">Creative</span>
+                            <span class="inline-block animate-fade-in text-primary-600 dark:text-primary-400 mx-1 md:mx-2" style="animation-delay: 0.4s;">Web Designer</span>
+                            <span class="inline-block animate-fade-in" style="animation-delay: 0.6s;">&</span>
+                            <span class="inline-block animate-fade-in text-purple-600 dark:text-purple-400 mx-1 md:mx-2" style="animation-delay: 0.8s;">Frontend Developer</span>
+                        </p>
+                    </div>
+                    
+                    <div class="max-w-2xl mx-auto">
+                        <p class="md:text-lg text-gray-500 dark:text-gray-400 leading-relaxed animate-fade-in" style="animation-delay: 1s;">
+                            Crafting beautiful, responsive web experiences with 
+                            <span class="text-primary-600 dark:text-primary-400 font-semibold">2 years</span> of passion-driven expertise in modern web technologies.
+                        </p>
+                    </div>
+                    
+                    <!-- Typing Animation for Skills -->
+                    <div class="h-8 flex items-center justify-center">
+                        <span class="text-gray-400 dark:text-gray-500 mr-2">Specialized in:</span>
+                        <span id="typing-text" class="text-primary-600 dark:text-primary-400 font-medium"></span>
+                        <span class="animate-pulse">|</span>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
+                    <a href="#projects" class="group btn-primary relative px-6 py-3 md:px-10 md:py-4 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/25 overflow-hidden">
+                        <div class="relative flex items-center z-10">
+                            <i class="fas fa-rocket mr-3 group-hover:animate-bounce"></i>
+                            <span class="font-semibold">View My Work</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </a>
+                    
+                    <a href="#contact" class="group btn-secondary relative px-6 py-3 md:px-10 md:py-4 border-2 border-primary-600 text-primary-600 dark:text-primary-400 hover:text-white rounded-full transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-primary-500/25 overflow-hidden">
+                        <div class="relative flex items-center z-10">
+                            <i class="fas fa-envelope mr-3 group-hover:animate-pulse"></i>
+                            <span class="font-semibold">Get In Touch</span>
+                        </div>
+                    </a>
+                </div>
+              
+            </div>
+       
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-10 lg:py-20 bg-gray-50 dark:bg-gray-800 transition-all duration-300 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6 lg:mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">About Me</span>
+                </h2>
+                <p class="md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Passionate about creating digital experiences that make a difference
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="space-y-6">
+                    <div class="prose prose-lg dark:prose-invert">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed md:text-left text-center mb-2">
+                            With 2 years of dedicated experience in web design and development, I specialize in creating beautiful, functional, and user-centered digital experiences. My journey began with a fascination for how design and code come together to solve real-world problems.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed md:text-left text-center">
+                            I'm passionate about clean code, responsive design, and staying current with the latest web technologies. Every project I work on is an opportunity to push creative boundaries while maintaining the highest standards of performance and accessibility.
+                        </p>
+                    </div>
+                
+                    <!-- Download Resume -->
+                
+                    <div class="flex gap-4 md:gap-6 items-center justify-center md:justify-start">
+                    <a href="assets/images/harshita-viradiya-cv.pdf" download="Harshita-Viradiya-Resume.pdf" id="download-resume" class="group btn-primary relative px-6 py-3 md:px-10 md:py-4 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-full transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-purple-500/25 overflow-hidden">
+                        <div class="relative flex items-center z-10">
+                           <i class="fas fa-download mr-2"></i>
+                            Download Resume
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </a>
+                </div>
+                </div>
+                
+                <!-- Creative Visual Element -->
+                <div class="relative">
+                    <!-- Main Design Card -->
+                    <img src="assets/images/about-image.png" alt="about-image">
+                    
+                    <!-- Floating Creative Elements -->
+                  
+                    <!-- Background Glow -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-400/20 via-purple-400/20 to-pink-400/20 rounded-3xl blur-xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-10 lg:py-20 bg-white dark:bg-gray-900 transition-all duration-300 relative overflow-hidden">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-5 dark:opacity-10">
+            <div class="absolute top-10 left-10 w-4 h-4 bg-primary-500 rounded-full animate-ping"></div>
+            <div class="absolute top-20 right-20 w-6 h-6 bg-purple-500 rounded-full animate-pulse"></div>
+            <div class="absolute bottom-20 left-20 w-3 h-3 bg-pink-500 rounded-full animate-bounce"></div>
+            <div class="absolute bottom-10 right-10 w-5 h-5 bg-blue-500 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-6 lg:mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Technical Skills</span>
+                </h2>
+                <p class="md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Technologies I work with to create amazing digital experiences
+                </p>
+            </div>
+            
+            <!-- Skills Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Frontend Technologies -->
+                <div class="skill-card group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                    <div class="absolute top-4 right-4 w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg lg:rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fab fa-html5 text-white text-xl"></i>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Frontend</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Core web technologies</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-html5 text-orange-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">HTML5</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-css3-alt text-blue-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">CSS3</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-js-square text-yellow-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="skill-card group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                    <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-layer-group text-white text-xl"></i>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Frameworks</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Modern CSS frameworks</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-wind text-teal-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Tailwind CSS</span>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fab fa-bootstrap text-purple-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Bootstrap</span>
+                            </div>
+                            
+                        </div>
+                        
+                    
+                    </div>
+                 </div>
+                
+                <!-- Design & Tools -->
+                <div class="skill-card group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl md:rounded-2xl p-4 md:p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                    <div class="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-red-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fas fa-palette text-white text-xl"></i>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Design</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">UI/UX & responsive design</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-mobile-alt text-green-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Responsive</span>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-code text-indigo-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">SCSS</span>
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-pink-100 dark:bg-pink-900/30 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-paint-brush text-pink-500 text-sm"></i>
+                                </div>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">UI/UX</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6 lg:mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Featured Projects</span>
+                </h2>
+                <p class="md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    A showcase of my recent work and creative solutions
+                </p>
+            </div>
+            
+            <!-- Project Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-2 rounded-full border-2 border-primary-600 bg-primary-600 text-white transition-all duration-300"
+                 data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-all duration-300" 
+                data-filter="web">
+                    eCommerce theme
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-all duration-300"
+                 data-filter="addon">
+                    Dash Add-ons
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-all duration-300"
+                 data-filter="cards">
+                    Vcards
+                </button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card group" data-category="web all">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-1.png" alt="E-commerce Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <div class="flex space-x-2">
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2"> Gymsa eCommerce Theme</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">A modern, responsive eCommerce platform designed for fitness and sports stores. Clean design, flexible layout options, and seamless shopping experience.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="1">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                   
+                                    <a href="https://harshita2682003.github.io/gymsa/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card group" data-category="all web">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-2.png" alt="Dashboard UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <div class="flex space-x-2">
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Merrymart eCommerce Theme</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">A joyful, responsive, and beautifully designed holiday theme — perfect for seasonal sales, gift stores, Christmas events, and festive campaigns.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="2">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                   
+                                    <a href="https://harshita2682003.github.io/marrymart/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card group" data-category="all web">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-3.png" alt="Restaurant Website" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                     <div class="flex space-x-2">
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Stepglam eCommerce Theme</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">StepGlam is a clean and elegant frontend eCommerce theme designed for traditional juti (ethnic footwear) stores.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="3">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                    
+                                    <a href="https://harshita2682003.github.io/stepglam/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 3 -->
+                <div class="project-card group" data-category="all web">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-5.png" alt="Restaurant Website" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                     <div class="flex space-x-2">
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Cakezilla eCommerce Theme</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">Cakezilla is a sweet and elegant frontend eCommerce theme designed specifically for cake shops, bakeries, and dessert boutiques.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="4">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                    
+                                    <a href="https://harshita2682003.github.io/cakezilla/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card group" data-category="all addon">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-4.png" alt="Mobile App UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                     <div class="flex space-x-2">
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">Tailwind css</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Dash Support Ticket Add-ons</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">Dash Support Ticket Add-ons is a frontend UI module designed to integrate seamlessly into admin or user dashboards. It provides a user-friendly interface for managing support tickets and accessing knowledge base content.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="5">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                
+                                    <a href="https://harshita2682003.github.io/support-ticket/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card group" data-category="all addon">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-6.png" alt="Portfolio Website" class="w-full h-100 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <div class="flex space-x-2">
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">Tailwind css</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Dash Vehicle Booking Add-ons</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">Dash Vehicle Booking Add-ons is a frontend UI module crafted for vehicle rental or booking dashboards.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="6">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                   
+                                    <a href="https://harshita2682003.github.io/vehicle-booking/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card group" data-category="all cards">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-7.png" alt="Blog Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <div class="flex space-x-2">
+                                         <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Event Management Vcard</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">Event Management vCard is a modern, interactive vCard designed for event professionals and businesses.</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="7">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                 
+                                    <a href="https://harshita2682003.github.io/event-management/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 8 -->
+                <div class="project-card group" data-category="all cards">
+                    <div class="bg-white dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/project-img-8.png" alt="Blog Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <div class="flex space-x-2">
+                                         <span class="px-2 py-1 bg-primary-600 rounded text-xs">HTML</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">CSS</span>
+                                        <span class="px-2 py-1 bg-primary-600 rounded text-xs">JS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 lg:p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Surgeon Vcard</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">Surgeon vCard is a sleek and professional digital card tailored for surgeons and medical practitioners..</p>
+                            <div class="flex justify-between items-center">
+                                <button class="text-primary-600 hover:text-primary-700 font-medium text-sm view-project" data-project="8">
+                                    View Details
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                                <div class="flex space-x-2">
+                                 
+                                    <a href="https://harshita2682003.github.io/surgeon/" target="_blank" class="w-8 h-8 bg-gray-100 dark:bg-gray-600 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-300">
+                                        <i class="fas fa-external-link-alt text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6 lg:mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Get In Touch</span>
+                </h2>
+                <p class="md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Ready to bring your ideas to life? Let's create something amazing together!
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Let's talk about your project</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            I'm always excited to work on new projects and collaborate with amazing people. Whether you have a clear vision or just an idea, I'd love to help bring it to life.
+                        </p>
+                    </div>
+                    
+                    <!-- Contact Methods -->
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Email</h4>
+                                <a href="mailto:harshitaviradiya26@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                                    harshitaviradiya26@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Phone</h4>
+                                <a href="tel:+917096454730" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">
+                                    +91 70964 54730
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">E-303 Vastu Residency, yogi chowk, surat.</p>
+                            </div>
+                        </div>  
+                    </div>
+                  
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    First Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="John"
+                                >
+                                <span class="error-message text-red-500 text-sm hidden"></span>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Last Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                    placeholder="Doe"
+                                >
+                                <span class="error-message text-red-500 text-sm hidden"></span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Email Address *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                placeholder="john.doe@example.com"
+                            >
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Subject *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+                                placeholder="Project Inquiry"
+                            >
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Message *
+                            </label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="5" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 resize-none"
+                                placeholder="Tell me about your project..."
+                            ></textarea>
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <button 
+                            type="submit" 
+                            class="w-full px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                            id="submit-btn"
+                        >
+                            <span class="btn-text">Send Message</span>
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                        
+                        <div id="form-message" class="text-center hidden">
+                            <div class="success-message text-green-600 dark:text-green-400 hidden">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                Thank you! Your message has been sent successfully.
+                            </div>
+                            <div class="error-message text-red-600 dark:text-red-400 hidden">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                Something went wrong. Please try again.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-primary-400 mb-4 font-poppins">Harshita Viradiya</div>
+                <p class="text-gray-400 mb-8">Creating digital experiences that inspire and engage</p>
+                
+                <!-- Footer Navigation -->
+                <div class="flex flex-wrap justify-center gap-8 mb-8">
+                    <a href="#home" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="text-gray-400 hover:text-primary-400 transition-colors duration-300">Contact</a>
+                </div>
+               
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500">
+                        copy; 2025 ll rights reserved. Built with ❤️ using modern web technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full overflow-hidden">
+                <div class="relative max-h-[calc(100vh-60px)] overflow-y-auto">
+                    <!-- Close Button -->
+                    <button id="close-modal" class="absolute md:top-4 top-3 right-3 md:right-4 w-8 h-8 md:w-10 md:h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 z-10">
+                        <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                    
+                    <!-- Modal Content -->
+                    <div id="modal-content" class="p-4 md:p-6 lg:p-8">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
